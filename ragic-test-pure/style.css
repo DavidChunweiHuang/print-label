@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 設定列印頁面的邊距 */
+@page {
+    margin: 0mm;
+    /* 你可以根據需求調整邊距 */
+}
+
+/* 列印時的樣式 */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    header, nav, footer {
+        display: none;
+    }
+
+    .single-page {
+        break-before: page;
+        break-after: page;
+    }
+
+    /* 調整列印的位置 */
+    /* .main-container {
+        position: relative;
+        top:  -10mm;
+        left: 0mm;
+    } */
+    .container {
+        position: relative;
+        top:  -30mm;
+        left: 5mm;
+        /* top:  0mm;
+        left: 0mm; */
+    }
+
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+main .container {
+    display: block;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f1f1f1;
+}
+
+#barcode {
+    margin: 20px auto;
+    display: block;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 5mm; */
+    /* 可依需求調整上下間距 */
+    /* margin-top: 10mm; */
+}
+
+/* 兩個方形的共同樣式 */
+.box {
+    width: 25mm;
+    height: 15mm;
+    border: 0px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 上方方形，內部文字顛倒 */
+.top-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    /* transform: rotate(180deg); */
+    font-size: 9px;
+    
+}
+
+p {
+    margin: 0px;
+}
+
+.inline-name {
+    font-style: italic;
+    text-align: center;
+}
