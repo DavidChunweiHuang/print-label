@@ -13,7 +13,7 @@ body {
 
 /* 列印時的樣式 */
 @media print {
-    body {
+    body, main {
         margin: 0;
         padding: 0;
     }
@@ -22,10 +22,18 @@ body {
         display: none;
     }
 
-    .single-page {
+    /* .single-page {
         break-before: page;
         break-after: page;
     }
+
+     /* 第一個項目不要在前面強制換頁 */
+    /* .single-page:first-child {
+        break-before: auto;
+    }
+    .single-page:last-child {
+        break-after: auto;
+    } */ 
 
     /* 調整列印的位置 */
     /* .main-container {
@@ -35,10 +43,16 @@ body {
     } */
     .container {
         position: relative;
-        top:  -30mm;
-        left: 5mm;
-        /* top:  0mm;
-        left: 0mm; */
+        break-before: page;
+        /* display: block; */
+        margin-top:  -31mm;
+        margin-bottom: 31mm;
+        margin-left: -10mm;
+    }
+
+    .container:last-child {
+        break-before: auto;
+        margin-bottom: -31mm;
     }
 
 }
@@ -69,6 +83,7 @@ main {
 
 main .container {
     display: block;
+    /* max-height: 113px; */
 }
 
 footer {

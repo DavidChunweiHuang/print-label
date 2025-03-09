@@ -50,7 +50,7 @@ async function fetchData() {
         // 建立一個容器 div，方便排版
         const div = document.createElement("div");
         div.classList.add("container");
-        div.classList.add("single-page");
+        // div.classList.add("single-page");
 
         // 建立上方的方形區域
         const top_box = document.createElement("div");
